@@ -1,2 +1,24 @@
 # ocp-nsgen
-Aliases wrapper generator
+
+## Automatic aliases wrapper generator
+
+This simple tool allows one to generate automatically wrappers to simulate
+namespaces from libraries objetcs (cma or cmxa). In other words, take for
+example an object "foo.cma" that contains two compilation units "Bar" and "Baz".
+It will generate (on the standard output) the following module rebinding:
+```ocaml
+module Bar = Bar
+module Baz = Baz
+```
+As a result, those modules can be used as ```Foo.Bar``` and ```Foo.Baz```.
+
+An other possiblity is to give a prefix to remove in the alias, in order to make
+wrappers to look more "namespace". Assume "foo.cma" that contains "Foo_bar" and
+"Foo_baz":
+```ocaml
+module Bar = Foo_bar
+module Baz = Foo_baz
+```
+
+It can be called on multiple files, each time aliased using the last prefix
+declared.
