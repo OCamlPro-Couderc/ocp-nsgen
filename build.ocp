@@ -1,0 +1,4 @@
+begin program "ocp-nsgen"
+    files = [ "nsgen.ml" ]
+    requires = [ "compiler-libs" "compiler-libs.common" ]
+end
