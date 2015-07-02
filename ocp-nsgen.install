@@ -1,0 +1,4 @@
+bin: [
+   "_obuild/ocp-nsgen/ocp-nsgen.asm" { "ocp-nsgen" }
+   "_obuild/ocp-nsgen/ocp-nsgen.byte" { "ocp-nsgen.byte" }
+]
