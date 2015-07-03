@@ -30,8 +30,7 @@ Using ```opam```:
 opam pin add ocp-nsgen git@github.com:OCamlPro-Couderc/ocp-nsgen.git
 ```
 
-Otherwise, it needs ```ocp-build``` (and obviously OCaml, with
-```compiler-libs```):
+Otherwise, it needs ```ocp-build``` (and obviously OCaml, with ```compiler-libs```):
 ```
 ocp-build ocp-nsgen
 // to install
