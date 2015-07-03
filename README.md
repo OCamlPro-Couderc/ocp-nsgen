@@ -25,13 +25,17 @@ declared.
 
 ## Installation
 
+ocp-nsgen is only compatible with OCaml >= 4.02.0, due to changes in the
+Parsetree. Since it is designed to be used specifically with aliases and the
+```-no-alias-deps``` option, it is not that relevant to use it for earlier
+versions.
+
 Using ```opam```:
 ```
 opam pin add ocp-nsgen git@github.com:OCamlPro-Couderc/ocp-nsgen.git
 ```
 
-Otherwise, it needs ```ocp-build``` (and obviously OCaml, with
-```compiler-libs```):
+Otherwise, it needs ```ocp-build``` (and obviously OCaml, with ```compiler-libs```):
 ```
 ocp-build ocp-nsgen
 // to install

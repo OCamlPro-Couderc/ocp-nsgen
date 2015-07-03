@@ -10,4 +10,5 @@ build: [
 depends: [
   "ocp-build"
 ]
+available: [ ocaml-version >= "4.02" ]
 
