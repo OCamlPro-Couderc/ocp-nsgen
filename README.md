@@ -22,3 +22,18 @@ module Baz = Foo_baz
 
 It can be called on multiple files, each time aliased using the last prefix
 declared.
+
+## Installation
+
+Using ```opam```:
+```
+opam pin add ocp-nsgen git@github.com:OCamlPro-Couderc/ocp-nsgen.git
+```
+
+Otherwise, it needs ```ocp-build``` (and obviously OCaml, with
+```compiler-libs```):
+```
+ocp-build ocp-nsgen
+// to install
+cp _obuild/ocp-nsgen.<byte|asm> <destination accessible from PATH>
+```
