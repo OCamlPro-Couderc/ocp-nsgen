@@ -60,22 +60,11 @@ let remove_prefix unit pre =
 
 let gen_struct (f, l) =
   let open Parsetree in
+  let open Ast_helper in
   f, List.map (fun (alias, md) ->
-      let modexpr = {
-        pmod_desc = Pmod_ident (Location.mknoloc (Longident.Lident md));
-        pmod_loc = Location.none;
-        pmod_attributes = []
-      } in
-      let modbind = {
-        pmb_name = Location.mknoloc alias;
-        pmb_expr = modexpr;
-        pmb_attributes = [];
-        pmb_loc = Location.none;
-      } in
-      {
-        pstr_desc = Pstr_module modbind;
-        pstr_loc = Location.none
-      }) l
+      let modexpr = Mod.ident (Location.mknoloc @@ Longident.Lident md) in
+      let modbind = Mb.mk (Location.mknoloc alias) modexpr in
+      Str.module_ modbind) l
 
 let gen_structs l =
   List.map gen_struct l
